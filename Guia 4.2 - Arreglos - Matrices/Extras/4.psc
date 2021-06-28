@@ -1,7 +1,6 @@
 Algoritmo sin_titulo
-	Definir i, j, A, B, multiplicacion Como Entero
-	multiplicacion = 0
-	Dimension A[3, 3], B[3, 3]
+	Definir i, j, k, A, B, multiplicacion, suma Como Entero
+	Dimension A[3, 3], B[3, 3], multiplicacion[3, 3]
 	Para i = 0 Hasta 2 Hacer
 		Para j = 0 Hasta 2 Hacer
 			A[i, j] = Aleatorio(1, 9)
@@ -9,9 +8,15 @@ Algoritmo sin_titulo
 		FinPara
 	FinPara
 	Para i = 0 Hasta 2 Hacer
-		Para j = 0 Hasta 2 Hacer
-			multiplicacion = multiplicacion + A[i, j] * B[i, j]
-		FinPara
+		Para k = 0 Hasta 2 Hacer
+			suma = 0
+			Para j = 0 Hasta 2 Hacer
+				suma = suma + A[i, j] * B[j, k]
+				Escribir suma Sin Saltar, "   "
+			FinPara
+			multiplicacion[i, k] = suma
+			Escribir ""
+		FinPara		
 	FinPara
 	Escribir "La matriz A es "
 	Para i = 0 Hasta 2 Hacer
@@ -27,5 +32,12 @@ Algoritmo sin_titulo
 		FinPara
 		Escribir ""
 	FinPara
-	Escribir "La multiplicacion es: ", multiplicacion
+	Escribir ""
+	Escribir "La matriz de multiplicacion es "
+	Para i = 0 Hasta 2 Hacer
+		Para j = 0 Hasta 2 Hacer
+			Escribir Sin Saltar multiplicacion[i, j], " "
+		FinPara
+		Escribir ""
+	FinPara
 FinAlgoritmo
